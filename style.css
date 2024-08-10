@@ -1,0 +1,19 @@
+.container {
+  margin: auto;
+width: 60%;
+border: 5px solid #FFFF00;
+padding: 10px;
+    outline: dashed 1px black;
+    background-color: lightgray;
+  }
+  
+  p {
+    /* Center horizontally*/
+    text-align: center;
+  }
+  .operationButtons{
+      background-color: darksalmon;
+  }
+  .oprationContainer{
+      margin-left: 40px;
+  }

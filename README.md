@@ -1,1 +1,2 @@
-# JS-Calculator
+# Calculator
+Simple Mathematical Calculation

@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css"></link>
+    <script type="text/javascript">        
+        function clearConsole() {
+            let number1 = +document.getElementById('number1').value;
+            let number2 = +document.getElementById('number2').value;
+            if(number1==0 && number2==0){
+              document.getElementById('result').value=0;    
+            } 
+        }    
+        function calculate(meth) {
+            let number1 = +document.getElementById('number1').value;
+            let number2 = +document.getElementById('number2').value;
+            document.getElementById('error1').innerHTML = '';
+            document.getElementById('error2').innerHTML = '';
+            if(number1 == 0) {
+                document.getElementById('error1').innerHTML = 'Please enter a number > 0 to calculate';
+                document.getElementById('error1').style.color = 'red';
+            }
+            if(number2 == 0) {
+                document.getElementById('error2').innerHTML = 'Please enter a number > 0 to calculate';
+                document.getElementById('error2').style.color = 'red';
+            }
+            let result;
+            if(number1 != 0 && number2 != 0) {
+                switch (meth) {
+                    case "add":
+                    result=number1+number2;
+                    break;
+                    case "sub":
+                    result=number1-number2;
+                    break;
+                    case "mul":
+                    result=number1*number2;;
+                    break;
+                    case "div":
+                    result=number1/number2;;
+                    break;
+                }
+              document.getElementById('result').value = result;
+            } else {
+                document.getElementById('result').value ='Invalid';
+            }
+        }
+    </script>
+  </head>
+    <body>
+        <div class="container">
+            <div>
+                A=<input type="number"  id="number1" onblur="clearConsole()" />
+                <br />
+                <span id="error1"></span>
+                <br />
+                B=<input type="number" id="number2" onblur="clearConsole()"  />
+                <br/>
+                <span id="error2"></span>
+                <br />
+                <div>
+                    <button class="operationButtons" onclick="calculate('add')">+</button>
+                    <button class="operationButtons" onclick="calculate('sub')">-</button>
+                    <button class="operationButtons" onclick="calculate('mul')">*</button>
+                    <button class="operationButtons" onclick="calculate('div')">/</button>
+                </div>
+                <br>
+                <div>
+                    Answer=  <input type="text" disabled  id="result" />
+                </div>
+            </div>            
+        </div>
+    </body>
+</html>

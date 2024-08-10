@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="number" id="num" >
+    <button onclick="getnumber()">get</button>
+    <br>
+    <script>
+      var n = 5;
+      function getnumber(){
+        n = document.getElementById('num').value
+        for (let i = 1; i <= n; i++) {
+          for (let j = 1; j <= n - i; j++) {
+            string += " ";
+            document.write(" ")
+          }
+          for (let k = 0; k < 2 * i - 1; k++) {
+            document.write("*")
+            string += "*";
+          }
+          string += "\n";
+          document.write("<br>")
+        }
+        console.log(string);
+      }
+      let string = "";
+    </script>
+  </body>
+</html>
